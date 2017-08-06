@@ -1,6 +1,7 @@
-# LineQueue - Client
+# LineQueue
 
 Looking for a simple service queue management application with a dedicated mobile app? LineQueue is an open-source queue management for service counters! 🏪📱🕵️‍
+[![Build Status](https://travis-ci.org/shakedlokits/LineQueue.svg?branch=master)](https://travis-ci.org/shakedlokits/LineQueue)
 
 ## Project structure
 

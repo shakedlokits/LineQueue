@@ -1,0 +1,9 @@
+language: node_js
+sudo: true
+node_js:
+  - "node"
+  - "7"
+env:
+  - APP_DIR=lineQueueClient
+  # - APP_DIR=lineQueueManager
+script: cd $APP_DIR && yarn && yarn test
