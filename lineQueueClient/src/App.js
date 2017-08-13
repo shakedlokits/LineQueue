@@ -9,7 +9,7 @@ export default class App extends Component {
     return <Router>
       <Scene key="root">
         <Scene key="signup" component={Signup} title="Signup"/>
-        <Scene key="queue" component={Queue} title="Queue"/>
+				<Scene key="queue" component={Queue} title="Queue"/>
         <Scene key="confirmation" component={Confirmation} title="Confirmation"/>
       </Scene>
     </Router>
