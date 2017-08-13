@@ -6,4 +6,6 @@ node_js:
 env:
   - APP_DIR=lineQueueClient
   # - APP_DIR=lineQueueManager
+before_install:
+  openssl aes-256-cbc -K $encrypted_f732c1c3dd13_key -iv $encrypted_f732c1c3dd13_iv -in config.js.enc -out lineQueueClient/config.js -d
 script: cd $APP_DIR && yarn && yarn test
