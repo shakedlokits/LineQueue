@@ -3,6 +3,7 @@ import {Text, View} from 'react-native'
 import * as firebase from 'firebase'
 import { Actions } from 'react-native-router-flux'
 import PropTypes from 'prop-types';
+import Header from '../Header/Header'
 
 export default class Queue extends Component {
 
@@ -47,16 +48,20 @@ export default class Queue extends Component {
 	 * on mount, set up running id listener
 	 */
 	componentDidMount(){
+		var getNumberOfWaiting = this.getNumberOfWaiting
 		this.database.ref('/runningId').on('value', function() {
-			this.getNumberOfWaiting()
+			getNumberOfWaiting()
 		})
 	}
 
   render() {
     return (
       <View>
+				<Header />
         <Text>
-          This is THE page
+          Hi {this.props.fullName},
+					Your number in line is {this.props.id} and there
+					are {this.state.numWaiting} people waiting ahead of you
         </Text>
       </View>
     )

@@ -3,12 +3,14 @@ import {
   Text,
   View
 } from 'react-native';
+import Header from '../Header/Header'
 
-const Confirmation = () => {
+const Confirmation = (props) => {
 	return (
 		<View>
+			<Header />
 			<Text>
-				This is the confirmation page
+				Hey, {props.fullName}, thank's for all the fish!
 			</Text>
 		</View>
 	)

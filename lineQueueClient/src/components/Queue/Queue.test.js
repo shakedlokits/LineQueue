@@ -2,7 +2,7 @@ import 'react-native';
 import React from 'react';
 import Queue, { countPosition } from './Queue';
 import * as firebase from 'firebase';
-import config from '../../config'
+import config from '../../../config'
 import renderer from 'react-test-renderer';
 
 const MOCK_WAITLIST = [
