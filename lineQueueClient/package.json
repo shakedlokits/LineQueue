@@ -30,6 +30,6 @@
 		"react-test-renderer": "16.0.0-alpha.12"
 	},
   "rnpm": {
-		"assets": ["./fonts"]
+		"assets": ["./src/fonts"]
   }
 }

@@ -8,6 +8,7 @@ const signupStyle = StyleSheet.create({
   text: {
     fontSize: 16,
     textAlign: 'center',
+		fontFamily: 'Assistant',
     color: '#151515'
   },
   box: {
