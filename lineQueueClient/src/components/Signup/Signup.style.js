@@ -3,6 +3,9 @@ import { StyleSheet } from 'react-native';
 const signupStyle = StyleSheet.create({
   containerWhite: {
     flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: 'white'
   },
   text: {

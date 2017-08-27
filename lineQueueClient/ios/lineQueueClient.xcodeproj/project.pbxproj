@@ -35,16 +35,12 @@
 		2DCD954D1E0B4F2C00145EB5 /* lineQueueClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* lineQueueClientTests.m */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		EB40E890D1824B8D906ACB0B /* Alef Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 019E29CD8A2B416387B2CCC7 /* Alef Bold.ttf */; };
-		93DFA6FB797E4D3A9E9944E6 /* Alef Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6324B892DEE74A6BB21B37FA /* Alef Regular.ttf */; };
-		2FF9FD4455424F0D9EA4A89F /* Assistant-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9399BDD716A4136898951AE /* Assistant-Bold.ttf */; };
-		8B0F977C05D84A0CBA248634 /* Assistant-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD2A0D7CAA6B4F4885A7FEA4 /* Assistant-ExtraBold.ttf */; };
-		9D9E7F7AAE494445BC77FF63 /* Assistant-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75382D37160A4C5891E60F6C /* Assistant-Regular.ttf */; };
-		15F09C33B08D4131B570F722 /* Assistant-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5145209464C44656B2CDF0ED /* Assistant-SemiBold.ttf */; };
-		3BD0AD3D90A6403D9DD0BCF2 /* Assistant Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFBBE0E77D174829A1947ECF /* Assistant Bold.ttf */; };
-		AA5887BC2480418AB88EA3BD /* Assistant ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 385CC9DAA6DD4C4C8F22D611 /* Assistant ExtraBold.ttf */; };
-		1376256FE8074D40A53E1F4D /* Assistant Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78B7B11F6F45400DB21B2940 /* Assistant Regular.ttf */; };
-		37251B0C42294325BD669DDF /* Assistant SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7A266C514EF4CA8A3C1B0C9 /* Assistant SemiBold.ttf */; };
+		D10EE05D86C94D8E960FBF1A /* Alef Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79D93759F52645B78767D742 /* Alef Bold.ttf */; };
+		D8E3DEA19BCC4F2595490F72 /* Alef Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F93D3BC6064CB5B8205167 /* Alef Regular.ttf */; };
+		C034D3982F8841B58E30EDE0 /* Assistant Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 792C401215FC4E33B349735C /* Assistant Bold.ttf */; };
+		B118A52EE40F404688BEE47D /* Assistant ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0EE6C3CB2FD4F7C95416575 /* Assistant ExtraBold.ttf */; };
+		EF71C2F4ACF14215AB26A87C /* Assistant Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 121D92EE74954EBC9B324315 /* Assistant Regular.ttf */; };
+		BE0F6E9825BB4C92B43A6B19 /* Assistant SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 146CDCC5FC0844EAA1C05F69 /* Assistant SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -264,16 +260,12 @@
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		019E29CD8A2B416387B2CCC7 /* Alef Bold.ttf */ = {isa = PBXFileReference; name = "Alef Bold.ttf"; path = "../src/fonts/Alef Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6324B892DEE74A6BB21B37FA /* Alef Regular.ttf */ = {isa = PBXFileReference; name = "Alef Regular.ttf"; path = "../src/fonts/Alef Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C9399BDD716A4136898951AE /* Assistant-Bold.ttf */ = {isa = PBXFileReference; name = "Assistant-Bold.ttf"; path = "../src/fonts/Assistant-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		CD2A0D7CAA6B4F4885A7FEA4 /* Assistant-ExtraBold.ttf */ = {isa = PBXFileReference; name = "Assistant-ExtraBold.ttf"; path = "../src/fonts/Assistant-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		75382D37160A4C5891E60F6C /* Assistant-Regular.ttf */ = {isa = PBXFileReference; name = "Assistant-Regular.ttf"; path = "../src/fonts/Assistant-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5145209464C44656B2CDF0ED /* Assistant-SemiBold.ttf */ = {isa = PBXFileReference; name = "Assistant-SemiBold.ttf"; path = "../src/fonts/Assistant-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		FFBBE0E77D174829A1947ECF /* Assistant Bold.ttf */ = {isa = PBXFileReference; name = "Assistant Bold.ttf"; path = "../src/fonts/Assistant Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		385CC9DAA6DD4C4C8F22D611 /* Assistant ExtraBold.ttf */ = {isa = PBXFileReference; name = "Assistant ExtraBold.ttf"; path = "../src/fonts/Assistant ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		78B7B11F6F45400DB21B2940 /* Assistant Regular.ttf */ = {isa = PBXFileReference; name = "Assistant Regular.ttf"; path = "../src/fonts/Assistant Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D7A266C514EF4CA8A3C1B0C9 /* Assistant SemiBold.ttf */ = {isa = PBXFileReference; name = "Assistant SemiBold.ttf"; path = "../src/fonts/Assistant SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		79D93759F52645B78767D742 /* Alef Bold.ttf */ = {isa = PBXFileReference; name = "Alef Bold.ttf"; path = "../src/fonts/Alef Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B3F93D3BC6064CB5B8205167 /* Alef Regular.ttf */ = {isa = PBXFileReference; name = "Alef Regular.ttf"; path = "../src/fonts/Alef Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		792C401215FC4E33B349735C /* Assistant Bold.ttf */ = {isa = PBXFileReference; name = "Assistant Bold.ttf"; path = "../src/fonts/Assistant Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C0EE6C3CB2FD4F7C95416575 /* Assistant ExtraBold.ttf */ = {isa = PBXFileReference; name = "Assistant ExtraBold.ttf"; path = "../src/fonts/Assistant ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		121D92EE74954EBC9B324315 /* Assistant Regular.ttf */ = {isa = PBXFileReference; name = "Assistant Regular.ttf"; path = "../src/fonts/Assistant Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		146CDCC5FC0844EAA1C05F69 /* Assistant SemiBold.ttf */ = {isa = PBXFileReference; name = "Assistant SemiBold.ttf"; path = "../src/fonts/Assistant SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -486,7 +478,7 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* lineQueueClientTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
-				F1F67F4BE6E04296870506E2 /* Resources */,
+				834FC001542B471FAEEC58A1 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -503,19 +495,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F1F67F4BE6E04296870506E2 /* Resources */ = {
+		834FC001542B471FAEEC58A1 /* Resources */ = {
 			isa = "PBXGroup";
 			children = (
-				019E29CD8A2B416387B2CCC7 /* Alef Bold.ttf */,
-				6324B892DEE74A6BB21B37FA /* Alef Regular.ttf */,
-				C9399BDD716A4136898951AE /* Assistant-Bold.ttf */,
-				CD2A0D7CAA6B4F4885A7FEA4 /* Assistant-ExtraBold.ttf */,
-				75382D37160A4C5891E60F6C /* Assistant-Regular.ttf */,
-				5145209464C44656B2CDF0ED /* Assistant-SemiBold.ttf */,
-				FFBBE0E77D174829A1947ECF /* Assistant Bold.ttf */,
-				385CC9DAA6DD4C4C8F22D611 /* Assistant ExtraBold.ttf */,
-				78B7B11F6F45400DB21B2940 /* Assistant Regular.ttf */,
-				D7A266C514EF4CA8A3C1B0C9 /* Assistant SemiBold.ttf */,
+				79D93759F52645B78767D742 /* Alef Bold.ttf */,
+				B3F93D3BC6064CB5B8205167 /* Alef Regular.ttf */,
+				792C401215FC4E33B349735C /* Assistant Bold.ttf */,
+				C0EE6C3CB2FD4F7C95416575 /* Assistant ExtraBold.ttf */,
+				121D92EE74954EBC9B324315 /* Assistant Regular.ttf */,
+				146CDCC5FC0844EAA1C05F69 /* Assistant SemiBold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -879,16 +867,12 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				EB40E890D1824B8D906ACB0B /* Alef Bold.ttf in Resources */,
-				93DFA6FB797E4D3A9E9944E6 /* Alef Regular.ttf in Resources */,
-				2FF9FD4455424F0D9EA4A89F /* Assistant-Bold.ttf in Resources */,
-				8B0F977C05D84A0CBA248634 /* Assistant-ExtraBold.ttf in Resources */,
-				9D9E7F7AAE494445BC77FF63 /* Assistant-Regular.ttf in Resources */,
-				15F09C33B08D4131B570F722 /* Assistant-SemiBold.ttf in Resources */,
-				3BD0AD3D90A6403D9DD0BCF2 /* Assistant Bold.ttf in Resources */,
-				AA5887BC2480418AB88EA3BD /* Assistant ExtraBold.ttf in Resources */,
-				1376256FE8074D40A53E1F4D /* Assistant Regular.ttf in Resources */,
-				37251B0C42294325BD669DDF /* Assistant SemiBold.ttf in Resources */,
+				D10EE05D86C94D8E960FBF1A /* Alef Bold.ttf in Resources */,
+				D8E3DEA19BCC4F2595490F72 /* Alef Regular.ttf in Resources */,
+				C034D3982F8841B58E30EDE0 /* Assistant Bold.ttf in Resources */,
+				B118A52EE40F404688BEE47D /* Assistant ExtraBold.ttf in Resources */,
+				EF71C2F4ACF14215AB26A87C /* Assistant Regular.ttf in Resources */,
+				BE0F6E9825BB4C92B43A6B19 /* Assistant SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

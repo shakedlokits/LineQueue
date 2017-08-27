@@ -14,7 +14,7 @@ export default class Signup extends Component {
 
   render() {
     return (
-      <View>
+      <View style= color="#000000">
 
         <Header/>
         <View style={signupStyle.containerWhite}>
@@ -22,7 +22,7 @@ export default class Signup extends Component {
           <Text style={signupStyle.text}>
 
             על מנת להזמין תור למחסן הציוד הזן את שמך:
-
+            
           </Text>
           <TextInput style={signupStyle.box} placeholder={"שם מלא"} onChangeText= { (text) => this.setState({text}) } value={this.state.text}/>
           <View style={signupStyle.border}/>
