@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Text, View, TextInput, Button} from 'react-native';
 import Header from '../Header/Header'
+import globals from '../../styles/globals.style'
 import signupStyle from './Signup.style'
 import { Actions } from 'react-native-router-flux'
 
@@ -14,22 +15,26 @@ export default class Signup extends Component {
 
   render() {
     return (
-      <View style= color="#000000">
+      <View style={globals.sceneContainer}>
 
         <Header/>
-        <View style={signupStyle.containerWhite}>
-          <View style={signupStyle.containerWhite, {height: 50}}/>
-          <Text style={signupStyle.text}>
+        <View style={signupStyle.contentContainer}>
+          <View style={signupStyle.inputContainer}>
+            <Text style={signupStyle.text}>
 
-            על מנת להזמין תור למחסן הציוד הזן את שמך:
-            
-          </Text>
+              על מנת להזמין תור למחסן הציוד הזן את שמך:
+
+            </Text>
+          </View>
+
           <TextInput style={signupStyle.box} placeholder={"שם מלא"} onChangeText= { (text) => this.setState({text}) } value={this.state.text}/>
-          <View style={signupStyle.border}/>
-          <Button style={signupStyle.button} title='send' color="#151515" onPress={() => Actions.queue({
+
+          <View style={signupStyle.inputContainer2}>
+            <Button style={signupStyle.button} title='שלח' color="#151515"  onPress={() => Actions.queue({
 							id: 0,
 							fullName: 'Shaked Lokits'
-						})}/>
+            })}/>
+          </View>
         </View>
       </View>
     )

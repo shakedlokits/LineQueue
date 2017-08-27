@@ -1,12 +1,19 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 const signupStyle = StyleSheet.create({
-  containerWhite: {
-    flex: 1,
+  contentContainer: {
+    display:'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    flex: 1,
+  },
+  inputContainer:{
+  },
+  inputContainer2:{
+    borderWidth: 1,
+    width: Dimensions.get('window').width,
   },
   text: {
     fontSize: 16,
@@ -18,16 +25,24 @@ const signupStyle = StyleSheet.create({
     height: 58,
     width: 264,
     borderColor: '#404040',
-    borderWidth: 1
+    borderWidth: 2
   },
   border: {
     borderWidth: 1,
     borderStyle: 'dashed',
-    borderColor: '#151515'
+    borderColor: '#151515',
+
+    width: Dimensions.get('window').width,
   },
   button: {
-    borderWidth: 1,
-    color: '#151515'
+    borderWidth: 2,
+    color: '#151515',
+    shadowOffset:{  width: 3,  height: 0, },
+    shadowColor: '#151515',
+    shadowOpacity: 1.0,
+    fontFamily: 'Alef',
+    fontWeight: 'bold',
+
   }
 })
 

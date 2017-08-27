@@ -1,49 +1,46 @@
 import React from 'react'
-import {Text, View, StyleSheet, Image} from 'react-native';
+import {Text, View, StyleSheet, Image,} from 'react-native';
 
 /**
  * Renders the app header
  */
 const Header = () => {
   let headerStyle = StyleSheet.create({
+    headerContainer: {
+      flex:1,
+      backgroundColor: '#151515',
+      maxHeight: 220,
+      justifyContent: 'flex-start',
+      alignItems:'flex-end',
+      paddingRight: 35,
+      paddingTop:20
+    },
     logo: {
       width: 103,
       height: 50,
-      paddingRight: 18,
-      paddingTop: 18,
-      justifyContent: 'center',
-      left: 250
-    },
-    containerBlack: {
-      backgroundColor: '#151515'
     },
     title: {
+      paddingTop:25,
       fontSize: 40,
+      lineHeight: 35,
       textAlign: 'right',
       color: 'white',
-      paddingRight: 30,
 			fontFamily: 'Alef',
-			fontWeight: 'bold'
-    }
+			fontWeight: 'bold'    }
   })
 
   return (
-    <View style={headerStyle.containerBlack}>
-      <View style={{
-        height: 20
-      }}/>
-		<Image style={headerStyle.logo} source={require('../../images/BezalelLogo.png')}></Image>
-      <View style={{
-        height: 20
-      }}/>
+    <View style={headerStyle.headerContainer}>
+      <View />
+      <Image style={headerStyle.logo} source={require('../../images/BezalelLogo.png')}></Image>
 
-      <Text style={headerStyle.title}>מערכת</Text>
-      <Text style={headerStyle.title}>הזמנת תורים</Text>
-      <Text style={headerStyle.title}>מחסן מרכזי</Text>
+      <Text style={headerStyle.title}>
+        מערכת{"\n"}
+        הזמנת תורים{"\n"}
+        מחסן מרכזי
+      </Text>
 
-      <View style={{
-        height: 30
-      }}/>
+
     </View>
   )
 }
