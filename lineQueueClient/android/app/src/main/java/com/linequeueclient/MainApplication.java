@@ -1,4 +1,4 @@
-package com.warehouseclient;
+package com.linequeueclient;
 
 import android.app.Application;
 

@@ -21,7 +21,9 @@ const Header = () => {
       fontSize: 40,
       textAlign: 'right',
       color: 'white',
-      paddingRight: 30
+      paddingRight: 30,
+			fontFamily: 'Alef',
+			fontWeight: 'bold'
     }
   })
 

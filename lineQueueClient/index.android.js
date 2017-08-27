@@ -6,4 +6,4 @@ import config from './config'
 // initialize firebase
 firebase.initializeApp(config)
 
-AppRegistry.registerComponent('warehouseClient', () => App);
+AppRegistry.registerComponent('lineQueueClient', () => App);
