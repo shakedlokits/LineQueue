@@ -16,28 +16,32 @@ export default class Signup extends Component {
   render() {
     return (
       <View style={globals.sceneContainer}>
-
         <Header/>
-
-        <View style={signupStyle.contentContainer}>
-
+        <View style={globals.contentContainer}>
           <View style={signupStyle.inputContainer}>
-            <Text style={globals.text}>
+            <Text style={globals.textRegular}>
               על מנת להזמין תור למחסן הציוד הזן את שמך: {"\n"}
             </Text>
-            <TextInput style={signupStyle.box} placeholder={"שם מלא"} onChangeText= { (text) => this.setState({text}) } value={this.state.text}/>
+            <TextInput
+              style={[globals.textLarge, signupStyle.inputBox]}
+              placeholder={"שם מלא"} onChangeText= {
+                (text) => this.setState({text})
+              }
+              value={this.state.text}/>
           </View>
-
-          <View style={signupStyle.inputContainerBottom}>
-            <View style={signupStyle.buttonContainer}>
-              <TouchableHighlight onPress={() => Actions.queue({id: 0, fullName: 'Shaked Lokits'})}>
+          <View style={signupStyle.buttonContainer}>
+            <View style={signupStyle.buttonBox}>
+              <TouchableHighlight onPress={
+                () => Actions.queue({
+                    id: 0,
+                    fullName: 'Shaked Lokits'
+                })
+              }>
                 <Text style={signupStyle.buttonText}>שלח</Text>
               </TouchableHighlight>
             </View>
           </View>
-
         </View>
-
       </View>
     )
   }

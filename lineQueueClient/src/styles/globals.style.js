@@ -1,18 +1,37 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
+
+let {height, width} = Dimensions.get('window')
+
+export let colors = {
+  main: '#151515'
+}
 
 const globals = StyleSheet.create({
   sceneContainer: {
-    display:'flex',
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
-
+    display: 'flex',
+    width: width,
+    height: height
   },
-  text: {
+  contentContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'stretch',
+    backgroundColor: 'white',
+    flex: 1
+  },
+  textRegular: {
     fontSize: 16,
     textAlign: 'center',
-		fontFamily: 'Assistant',
-    color: '#151515',
+    fontFamily: 'Assistant',
+    color: colors.main
   },
+  textLarge: {
+    fontSize: 20,
+    fontFamily: 'Assistant',
+    textAlign: 'center',
+    color: colors.main
+  }
 })
 
 export default globals

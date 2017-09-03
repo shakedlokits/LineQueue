@@ -1,52 +1,41 @@
 import {StyleSheet, Dimensions} from 'react-native';
+import colors from '../../styles/globals.style'
 
-let width = Dimensions.get('window').width
-let height = Dimensions.get('window').height
+let {height, width} = Dimensions.get('window')
 
 const signupStyle = StyleSheet.create({
-  contentContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-    alignItems: 'stretch',
-    backgroundColor: 'white',
-    flex: 1
-  },
   inputContainer: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
-  inputContainerBottom: {
+  buttonContainer: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     borderTopWidth: 1,
-    borderColor: '#151515',
-    paddingBottom: height * (1 / 8),
+    borderColor: colors.main
   },
-  box: {
-    textAlign: 'center',
-    fontSize: 20,
-    fontFamily: 'Assistant',
-    width: width * (3 / 4),
-    height: height * (1 / 10),
-    borderColor: '#151515',
-    borderWidth: 1
+  inputBox: {
+    padding: width * (1 / 20),
+    width: width * (5 / 7),
+    borderColor: colors.main,
+    borderWidth: 1,
+    textAlign: 'center'
   },
-  buttonContainer: {
+  buttonBox: {
     borderWidth: 2,
     width: width * (4 / 10),
     height: height * (1 / 10),
-    borderColor: '#151515',
+    borderColor: colors.main,
     shadowOffset: {
       width: 0,
       height: 3
     },
-    shadowColor: '#151515',
+    shadowColor: colors.main,
     shadowRadius: 0,
     shadowOpacity: 1.0,
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   buttonText: {
     fontFamily: 'Alef',
