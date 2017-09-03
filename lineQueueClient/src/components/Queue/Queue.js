@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
-import {Text, View} from 'react-native'
+import {Text, View, Dimensions} from 'react-native'
 import * as firebase from 'firebase'
 import { Actions } from 'react-native-router-flux'
 import PropTypes from 'prop-types';
 import Header from '../Header/Header'
+import queueStyle from './Queue.style'
 
 export default class Queue extends Component {
 
@@ -56,13 +57,38 @@ export default class Queue extends Component {
 
   render() {
     return (
-      <View>
+      <View style={{
+					width: Dimensions.get('window').width,
+					height: Dimensions.get('window').height,
+					display: 'flex'
+				}}>
 				<Header />
-        <Text>
-          Hi {this.props.fullName},
-					Your number in line is {this.props.id} and there
-					are {this.state.numWaiting} people waiting ahead of you
-        </Text>
+				<View style={queueStyle.contentContainer}>
+					<View style={queueStyle.textContainer}>
+						<Text style={queueStyle.content}>
+							היי{'\u00a0'}
+							<Text style={queueStyle.boldContent}>
+								{this.props.fullName},
+							</Text>
+							{'\n'}מספרך בתור הוא
+						</Text>
+						<Text style={queueStyle.queueNumber}>
+							{this.props.id + 1}
+						</Text>
+						<Text style={queueStyle.content}>
+							ממתינים לפניך עוד{'\u00a0'}
+							<Text style={queueStyle.boldContent}>
+								{this.state.numWaiting}
+							</Text>
+							{'\u00a0'}אנשים
+						</Text>
+					</View>
+					<View style={queueStyle.footerContainer}>
+						<Text style={[queueStyle.content, queueStyle.footerContent]}>
+						ניתן לסגור כעת את האפליקציה, הודעה תשלח{'\n'} אלייך כשיתקרב תורך.
+						</Text>
+					</View>
+				</View>
       </View>
     )
   }
