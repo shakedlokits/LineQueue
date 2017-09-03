@@ -8,9 +8,9 @@ export default class App extends Component {
   render() {
     return <Router>
       <Scene key="root" hideNavBar={true}>
-        <Scene key="signup" component={Signup} title="Signup"/>
-				<Scene key="queue" component={Queue} title="Queue"/>
-        <Scene key="confirmation" component={Confirmation} title="Confirmation"/>
+        <Scene key="signup" component={Signup} title="Signup" type="replace"/>
+				<Scene key="queue" component={Queue} title="Queue" type="replace"/>
+        <Scene key="confirmation" component={Confirmation} title="Confirmation" type="replace"/>
       </Scene>
     </Router>
   }
