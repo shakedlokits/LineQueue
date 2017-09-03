@@ -5,6 +5,10 @@ import globals from '../../styles/globals.style'
 import signupStyle from './Signup.style'
 import {Actions} from 'react-native-router-flux'
 
+/**
+ * Provides a user signup into queue database
+ * @type Component
+ */
 export default class Signup extends Component {
   constructor(props) {
     super(props);
