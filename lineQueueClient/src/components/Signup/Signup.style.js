@@ -1,48 +1,58 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
+
+let width = Dimensions.get('window').width
+let height = Dimensions.get('window').height
 
 const signupStyle = StyleSheet.create({
   contentContainer: {
-    display:'flex',
+    display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'space-around',
+    alignItems: 'stretch',
     backgroundColor: 'white',
+    flex: 1
+  },
+  inputContainer: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  inputContainer:{
-  },
-  inputContainer2:{
-    borderWidth: 1,
-    width: Dimensions.get('window').width,
-  },
-  text: {
-    fontSize: 16,
-    textAlign: 'center',
-		fontFamily: 'Assistant',
-    color: '#151515'
+  inputContainerBottom: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderTopWidth: 1,
+    borderColor: '#151515',
+    paddingBottom: height * (1 / 8),
   },
   box: {
-    height: 58,
-    width: 264,
-    borderColor: '#404040',
-    borderWidth: 2
-  },
-  border: {
-    borderWidth: 1,
-    borderStyle: 'dashed',
+    textAlign: 'center',
+    fontSize: 20,
+    fontFamily: 'Assistant',
+    width: width * (3 / 4),
+    height: height * (1 / 10),
     borderColor: '#151515',
-
-    width: Dimensions.get('window').width,
+    borderWidth: 1
   },
-  button: {
+  buttonContainer: {
     borderWidth: 2,
-    color: '#151515',
-    shadowOffset:{  width: 3,  height: 0, },
+    width: width * (4 / 10),
+    height: height * (1 / 10),
+    borderColor: '#151515',
+    shadowOffset: {
+      width: 0,
+      height: 3
+    },
     shadowColor: '#151515',
+    shadowRadius: 0,
     shadowOpacity: 1.0,
+    justifyContent: 'center',
+  },
+  buttonText: {
     fontFamily: 'Alef',
     fontWeight: 'bold',
-
+    fontSize: 38,
+    textAlign: 'center'
   }
 })
 

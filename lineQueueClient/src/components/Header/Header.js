@@ -13,14 +13,14 @@ const Header = () => {
       justifyContent: 'flex-start',
       alignItems:'flex-end',
       paddingRight: 35,
-      paddingTop:20
+      paddingTop:25
     },
     logo: {
       width: 103,
       height: 50,
     },
     title: {
-      paddingTop:25,
+      paddingTop:20,
       fontSize: 40,
       lineHeight: 35,
       textAlign: 'right',

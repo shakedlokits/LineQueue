@@ -6,7 +6,13 @@ const globals = StyleSheet.create({
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
 
-  }
+  },
+  text: {
+    fontSize: 16,
+    textAlign: 'center',
+		fontFamily: 'Assistant',
+    color: '#151515',
+  },
 })
 
 export default globals
