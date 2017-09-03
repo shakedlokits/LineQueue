@@ -1,33 +1,47 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
+import colors from '../../styles/globals.style'
+
+let {height, width} = Dimensions.get('window')
 
 const signupStyle = StyleSheet.create({
-  containerWhite: {
+  inputContainer: {
     flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white'
+    justifyContent: 'center'
   },
-  text: {
-    fontSize: 16,
-    textAlign: 'center',
-		fontFamily: 'Assistant',
-    color: '#151515'
+  buttonContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderTopWidth: 1,
+    borderColor: colors.main
   },
-  box: {
-    height: 58,
-    width: 264,
-    borderColor: '#404040',
-    borderWidth: 1
-  },
-  border: {
+  inputBox: {
+    padding: width * (1 / 20),
+    width: width * (5 / 7),
+    borderColor: colors.main,
     borderWidth: 1,
-    borderStyle: 'dashed',
-    borderColor: '#151515'
+    textAlign: 'center'
   },
-  button: {
-    borderWidth: 1,
-    color: '#151515'
+  buttonBox: {
+    borderWidth: 2,
+    width: width * (4 / 10),
+    height: height * (1 / 10),
+    borderColor: colors.main,
+    shadowOffset: {
+      width: 0,
+      height: 3
+    },
+    shadowColor: colors.main,
+    shadowRadius: 0,
+    shadowOpacity: 1.0,
+    justifyContent: 'center'
+  },
+  buttonText: {
+    fontFamily: 'Alef',
+    fontWeight: 'bold',
+    fontSize: 38,
+    textAlign: 'center'
   }
 })
 

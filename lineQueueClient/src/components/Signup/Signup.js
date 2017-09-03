@@ -1,9 +1,14 @@
 import React, {Component} from 'react'
-import {Text, View, TextInput, Button} from 'react-native';
+import {Text, View, TextInput, TouchableHighlight} from 'react-native';
 import Header from '../Header/Header'
+import globals from '../../styles/globals.style'
 import signupStyle from './Signup.style'
-import { Actions } from 'react-native-router-flux'
+import {Actions} from 'react-native-router-flux'
 
+/**
+ * Provides a user signup into queue database
+ * @type Component
+ */
 export default class Signup extends Component {
   constructor(props) {
     super(props);
@@ -14,22 +19,32 @@ export default class Signup extends Component {
 
   render() {
     return (
-      <View style= color="#000000">
-
+      <View style={globals.sceneContainer}>
         <Header/>
-        <View style={signupStyle.containerWhite}>
-          <View style={signupStyle.containerWhite, {height: 50}}/>
-          <Text style={signupStyle.text}>
-
-            על מנת להזמין תור למחסן הציוד הזן את שמך:
-            
-          </Text>
-          <TextInput style={signupStyle.box} placeholder={"שם מלא"} onChangeText= { (text) => this.setState({text}) } value={this.state.text}/>
-          <View style={signupStyle.border}/>
-          <Button style={signupStyle.button} title='send' color="#151515" onPress={() => Actions.queue({
-							id: 0,
-							fullName: 'Shaked Lokits'
-						})}/>
+        <View style={globals.contentContainer}>
+          <View style={signupStyle.inputContainer}>
+            <Text style={globals.textRegular}>
+              על מנת להזמין תור למחסן הציוד הזן את שמך: {"\n"}
+            </Text>
+            <TextInput
+              style={[globals.textLarge, signupStyle.inputBox]}
+              placeholder={"שם מלא"} onChangeText= {
+                (text) => this.setState({text})
+              }
+              value={this.state.text}/>
+          </View>
+          <View style={signupStyle.buttonContainer}>
+            <View style={signupStyle.buttonBox}>
+              <TouchableHighlight onPress={
+                () => Actions.queue({
+                    id: 0,
+                    fullName: 'Shaked Lokits'
+                })
+              }>
+                <Text style={signupStyle.buttonText}>שלח</Text>
+              </TouchableHighlight>
+            </View>
+          </View>
         </View>
       </View>
     )
