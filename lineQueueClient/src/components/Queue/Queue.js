@@ -5,6 +5,7 @@ import { Actions } from 'react-native-router-flux'
 import PropTypes from 'prop-types';
 import Header from '../Header/Header'
 import queueStyle from './Queue.style'
+import globals from '../../styles/globals.style'
 
 export default class Queue extends Component {
 
@@ -58,12 +59,12 @@ export default class Queue extends Component {
   render() {
     return (
       <View style={{
-					width: Dimensions.get('window').width,
-					height: Dimensions.get('window').height,
+        width: Dimensions.get('window').width,
+        height: Dimensions.get('window').height,
 					display: 'flex'
-				}}>
+      }}>
 				<Header />
-				<View style={queueStyle.contentContainer}>
+				<View style={globals.contentContainer}>
 					<View style={queueStyle.textContainer}>
 						<Text style={queueStyle.content}>
 							היי{'\u00a0'}

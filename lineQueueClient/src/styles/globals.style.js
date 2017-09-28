@@ -31,6 +31,9 @@ const globals = StyleSheet.create({
     fontFamily: 'Assistant',
     textAlign: 'center',
     color: colors.main
+  },
+  textBold: {
+    fontWeight: 'bold',
   }
 })
 
