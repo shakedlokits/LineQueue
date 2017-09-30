@@ -1,20 +1,22 @@
-import StyleSheet from 'react-native';
-import colors from '../../styles/globals.style'
+import {StyleSheet, Dimensions} from 'react-native';
 
+let width = Dimensions.get('window').width
 
 const confirmationStyle = StyleSheet.create({
-  inputContainer: {
+  textContainer: {
     flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-around',
     alignItems: 'center',
-    justifyContent: 'center'
+    padding: width / 10,
   },
-  textRegularBold: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    fontFamily: 'Assistant',
-    color: colors.main
-  }
+  footerContainer: {
+		flex: 1,
+		borderTopWidth: 1,
+		justifyContent: 'flex-start',
+    padding: width / 10,
+  },
+
 })
 
 export default confirmationStyle
