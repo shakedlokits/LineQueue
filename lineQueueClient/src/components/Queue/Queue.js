@@ -5,6 +5,7 @@ import {Actions} from 'react-native-router-flux'
 import PropTypes from 'prop-types';
 import Header from '../Header/Header'
 import queueStyle from './Queue.style'
+import PushNotification from 'react-native-push-notification'
 import globals from '../../styles/globals.style'
 
 export default class Queue extends Component {
@@ -37,13 +38,21 @@ export default class Queue extends Component {
       let waitlist = snapshot.val()
       this.setState({
         numWaiting: countPosition(waitlist, this.props.id)
-      })
+      }, () => {
+        // if the number of waiting ahead is zero, move to next screen
+        if (!this.state.numWaiting) {
+          Actions.confirmation({fullName: this.props.fullName})
+        }
 
-      // if the number of waiting ahead is zero, move to next screen
-      if (!this.state.numWaiting) {
-        Actions.confirmation({fullName: this.props.fullName})
-      }
+        if (this.state.numWaiting < 5) {
+          PushNotification.localNotification({
+            title: "הבא בתור!",
+            message: "ישנם " + this.state.numWaiting + " ממתינים לפניך, אנא גש/י לדלפק המחסן."
+          })
+        }
+      })
     })
+
   }
 
   /**
@@ -53,20 +62,21 @@ export default class Queue extends Component {
 
     // set a running id listener
     var getNumberOfWaiting = this.getNumberOfWaiting
-    this.database.ref('/runningId').on('value', function() {
+    this.database.ref('/waitlist').on('value', function() {
       getNumberOfWaiting()
     })
 
     // listen for app state close
-    AppState.addEventListener('change', this.handleAppClose);
+    // TODO: add an exit alert on app close
+    // AppState.addEventListener('change', this.handleAppClose);
   }
 
   /**
    * removes app close listener
    */
-  componentWillUnmount() {
-    AppState.removeEventListener('change', this.handleAppClose);
-  }
+  // componentWillUnmount() {
+  //   AppState.removeEventListener('change', this.handleAppClose);
+  // }
 
   /**
    * if the next state is inactive(application closed,
@@ -76,7 +86,7 @@ export default class Queue extends Component {
   _handleAppClose(nextAppState) {
 
     // on next state being inactive
-    if (nextAppState === 'inactive') {
+    if (nextAppState.match(/inactive|background/)) {
 
       // alert prompt data
       let alertTitle = 'אוי ואבוי'
@@ -99,18 +109,10 @@ export default class Queue extends Component {
    * removes the user from queue and moves
    * back to the signup screen
    */
-  _removeUserFromQueue(){
-    this.database
-      .ref('waitlist')
-      .orderByChild("id")
-      .limitToFirst(1)
-      .equalTo(this.props.id)
-      .once('value', (snapshot) => {
-        snapshot
-        .ref
-        .remove()
-        .then(Actions.signup)
-      })
+  _removeUserFromQueue() {
+    this.database.ref('waitlist').orderByChild("id").limitToFirst(1).equalTo(this.props.id).once('value', (snapshot) => {
+      snapshot.ref.remove().then(Actions.signup)
+    })
   }
 
   render() {
