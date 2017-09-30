@@ -10,7 +10,7 @@ const queueStyle = StyleSheet.create({
     alignItems: 'stretch'
 	},
 	textContainer: {
-		flex: 3,
+		flex: 2,
 		flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',

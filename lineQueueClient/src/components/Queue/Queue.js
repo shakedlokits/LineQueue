@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import Header from '../Header/Header'
 import queueStyle from './Queue.style'
 import PushNotification from 'react-native-push-notification'
+import globals from '../../styles/globals.style'
 
 export default class Queue extends Component {
 
@@ -119,36 +120,35 @@ export default class Queue extends Component {
       <View style={{
         width: Dimensions.get('window').width,
         height: Dimensions.get('window').height,
-        display: 'flex'
+				display: 'flex'
       }}>
-        <Header/>
-        <View style={queueStyle.contentContainer}>
-          <View style={queueStyle.textContainer}>
-            <Text style={queueStyle.content}>
-              היי{'\u00a0'}
-              <Text style={queueStyle.boldContent}>
-                {this.props.fullName},
-              </Text>
-              {'\n'}מספרך בתור הוא
-            </Text>
-            <Text style={queueStyle.queueNumber}>
-              {this.props.id}
-            </Text>
-            <Text style={queueStyle.content}>
-              ממתינים לפניך עוד{'\u00a0'}
-              <Text style={queueStyle.boldContent}>
-                {this.state.numWaiting}
-              </Text>
-              {'\u00a0'}אנשים
-            </Text>
-          </View>
-          <View style={queueStyle.footerContainer}>
-            <Text style={[queueStyle.content, queueStyle.footerContent]}>
-              ניתן לסגור כעת את האפליקציה, הודעה תשלח{'\n'}
-              אלייך כשיתקרב תורך.
-            </Text>
-          </View>
-        </View>
+				<Header />
+				<View style={globals.contentContainer}>
+					<View style={queueStyle.textContainer}>
+						<Text style={queueStyle.content}>
+							היי{'\u00a0'}
+							<Text style={queueStyle.boldContent}>
+								{this.props.fullName},
+							</Text>
+							{'\n'}מספרך בתור הוא
+						</Text>
+						<Text style={queueStyle.queueNumber}>
+							{this.props.id}
+						</Text>
+						<Text style={queueStyle.content}>
+							ממתינים לפניך עוד{'\u00a0'}
+							<Text style={queueStyle.boldContent}>
+								{this.state.numWaiting}
+							</Text>
+							{'\u00a0'}אנשים
+						</Text>
+					</View>
+					<View style={queueStyle.footerContainer}>
+						<Text style={[queueStyle.content, queueStyle.footerContent]}>
+						ניתן לסגור כעת את האפליקציה, הודעה תשלח{'\n'} אלייך כשיתקרב תורך.
+						</Text>
+					</View>
+				</View>
       </View>
     )
   }
