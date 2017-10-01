@@ -1,4 +1,4 @@
-import {StyleSheet, Dimensions} from 'react-native';
+import {StyleSheet, Dimensions, Platform} from 'react-native';
 
 let {height, width} = Dimensions.get('window')
 
@@ -21,19 +21,27 @@ const globals = StyleSheet.create({
     flex: 1
   },
   textRegular: {
-    fontSize: 16,
     textAlign: 'center',
-    fontFamily: 'Assistant',
-    color: colors.main
+    color: colors.main,
+    ...Platform.select({
+      ios: {
+        fontFamily: 'Assistant',
+        fontSize: 16,
+      },
+      android: {
+        fontFamily: 'Assistant Regular',
+        fontSize:18,
+      },
+    }),
   },
   textLarge: {
     fontSize: 20,
-    fontFamily: 'Assistant',
+    fontFamily: 'Assistant Regular',
     textAlign: 'center',
-    color: colors.main
+    color: colors.main,
   },
   textBold: {
-    fontWeight: 'bold',
+    fontFamily: 'Assistant Bold',
   }
 })
 

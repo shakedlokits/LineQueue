@@ -51,7 +51,9 @@ export default class Signup extends Component {
             <Text style={globals.textRegular}>
               על מנת להזמין תור למחסן הציוד הזן את שמך: {"\n"}
             </Text>
-            <TextInput style={[globals.textLarge, signupStyle.inputBox]} placeholder={"שם מלא"} onChangeText= { (input) => this.setState({fullName: input}) } value={this.state.fullName}/>
+            <TextInput style={[globals.textLarge, signupStyle.inputBox]}
+              underlineColorAndroid={'transparent'} placeholder={"שם מלא"}
+              onChangeText= { (input) => this.setState({fullName: input}) } value={this.state.fullName}/>
           </View>
           <View style={signupStyle.buttonContainer}>
             <View style={signupStyle.buttonBox}>

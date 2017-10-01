@@ -145,7 +145,7 @@ export default class Queue extends Component {
 					</View>
 					<View style={queueStyle.footerContainer}>
 						<Text style={[queueStyle.content, queueStyle.footerContent]}>
-						ניתן לסגור כעת את האפליקציה, הודעה תשלח{'\n'} אלייך כשיתקרב תורך.
+              ניתן לסגור כעת את האפליקציה, הודעה תשלח{'\n'} אלייך כשיתקרב תורך.
 						</Text>
 					</View>
 				</View>

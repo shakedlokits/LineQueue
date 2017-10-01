@@ -1,5 +1,5 @@
 import React from 'react'
-import {Text, View, StyleSheet, Image, Dimensions} from 'react-native';
+import {Text, View, StyleSheet, Image, Dimensions, Platform} from 'react-native';
 import {colors} from '../../styles/globals.style'
 
 let height = Dimensions.get('window').height
@@ -24,13 +24,19 @@ const Header = () => {
       paddingRight: 35
     },
     title: {
-      paddingTop: height * (1 / 40),
       fontSize: 40,
-      lineHeight: 35,
       textAlign: 'right',
       color: 'white',
-      fontFamily: 'Alef',
-      fontWeight: 'bold'
+      fontFamily: 'Alef Bold',
+      ...Platform.select({
+        ios: {
+          lineHeight: 35,
+          paddingTop: height * (1 / 40),
+        },
+        android: {
+          lineHeight: 45,
+        },
+      }),
     }
   })
 
