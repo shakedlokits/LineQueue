@@ -4,6 +4,8 @@
 <head>
   <link rel="stylesheet" type="text/css" href="main.css">
   <link rel="stylesheet" type="text/css" href="reset.css">
+  <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+  <script src="config.js" charset="utf-8"></script>
   <title>lineQueuePresentor</title>
 </head>
 
@@ -23,11 +25,11 @@
     <div class="contentContainer">
       <div class="upperContainer">
         <p class="boldedText">כרגע מקבל שירות מספר</p>
-        <p class="numberSlotBig">34</p>
+        <p class="numberSlotBig" id="next">-</p>
       </div>
       <div class="lowerContainer">
         <p class="text">המספרים הבאים בתור הם</p>
-          <div class="numberContainer">
+          <div class="numberContainer" id="numberList">
             <p class="numberSlot">34</p>
             <p class="numberSlot">55</p>
             <p class="numberSlot">89</p>
@@ -35,6 +37,7 @@
       </div>
     </div>
   </div>
+  <script src="index.js" charset="utf-8"></script>
 </body>
 
 </html>
