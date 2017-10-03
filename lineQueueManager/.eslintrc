@@ -1,10 +1,13 @@
 {
     "parser": "babel-eslint",
     "env": {
-        "browser": true
+        "browser": true,
+        "jest/globals": true
     },
     "plugins": [
-        "react"
+        "react",
+        "jest",
+        "react-native"
     ],
     "extends": [
         "eslint:recommended",
