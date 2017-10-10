@@ -1,4 +1,4 @@
-package com.warehousemanager;
+package com.linequeuemanager;
 
 import android.app.Application;
 
