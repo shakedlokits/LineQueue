@@ -5,6 +5,7 @@ import * as firebase from 'firebase'
 import globals from '../../styles/globals.style'
 import signupStyle from './Signup.style'
 import {Actions} from 'react-native-router-flux'
+import moment from 'moment'
 
 /**
  * Provides a user signup into queue database
@@ -31,7 +32,8 @@ export default class Signup extends Component {
 
       // save secured ID to state
       this.setState({
-        id: runningId + 1
+        id: runningId + 1,
+        timestamp: moment().format()
       }, () => {
         // push new user to waitlist as callback
         this.database.ref('waitlist').push(this.state)
