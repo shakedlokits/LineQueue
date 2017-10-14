@@ -16,6 +16,9 @@ export default class Waitlist extends Component {
     }
     this.database = firebase.database()
     this.getWaitlist = this._getWaitlist.bind(this)
+    this.wipeData = this._wipeData.bind(this)
+    this.handleWipeData = this._handleWipeData.bind(this)
+    this.removeUserFromQueue = this._removeUserFromQueue.bind(this)
   }
 
   /**
@@ -57,30 +60,36 @@ export default class Waitlist extends Component {
   }
 
   /**
-   * if the next state is inactive(application closed,
-   * prompt the user about loss of turn
-   * @param  {[type]} nextAppState the next AppState object
+   * wipes the user data from the database!
    */
-  _handleAppClose(nextAppState) {
+  _wipeData() {
+    this.database.ref('waitlist').orderByChild('id').once('value', (snapshot) => {
+      snapshop.forEach((clientSnapshot) => {
+        clientSnapshot.ref().remove()
+      })
+    })
+  }
 
-    // on next state being inactive
-    if (nextAppState.match(/inactive|background/)) {
+  /**
+   * prompts the user about wiping the database
+   * before doing so, uses a modal notification
+   */
+  _handleWipeData() {
 
       // alert prompt data
-      let alertTitle = 'אוי ואבוי'
-      let alertMessage = 'יציאתך מהאפליקציה תוותר על מיקומך בתור'
+      let alertTitle = 'עצור!'
+      let alertMessage = 'אתה בטוח שאתה רוצה לאפס את התור?'
 
       // prompt the user
       Alert.alert(alertTitle, alertMessage, [
         {
-          text: 'תשאיר אותי בתור',
+          text: 'לא',
           style: 'cancel'
         }, {
-          text: 'וויתרתי',
-          onPress: this.removeUserFromQueue
+          text: 'תאפס אותו',
+          onPress: this.wipeData
         }
       ], {cancelable: false})
-    }
   }
 
   /**
@@ -89,7 +98,7 @@ export default class Waitlist extends Component {
    */
   _removeUserFromQueue() {
     this.database.ref('waitlist').orderByChild("id").limitToFirst(1).once('value', (snapshot) => {
-      snapshot.ref.remove().then(Actions.signup)
+      snapshot.ref.remove()
     })
   }
 
@@ -100,6 +109,7 @@ export default class Waitlist extends Component {
           return (
             <View key={client.id}>
               <Text>{client.fullName} {client.timestamp}</Text>
+
             </View>
           )
         })}
