@@ -28,6 +28,7 @@ export default class Waitlist extends Component {
   _getWaitlist() {
 
     // requests the waitlist from firebase
+    console.group('Fetching waitlist')
     this.database.ref('waitlist').orderByChild('id').once('value', (snapshot) => {
 
       // define format for timestamp
@@ -35,6 +36,7 @@ export default class Waitlist extends Component {
 
       // on success, set the state to number of waiting ahead
       let waitlist = snapshot.val()
+      console.info(waitlist)
 
       this.setState({
         waitlist: Object.keys(waitlist).map((key, index) => {
@@ -42,6 +44,8 @@ export default class Waitlist extends Component {
             timestamp: moment(waitlist[key].timestamp).format(timestampFormat)
           })
         })
+      }, () => {
+        console.info('set state to wailist')
       })
     })
 
@@ -64,10 +68,13 @@ export default class Waitlist extends Component {
    */
   _wipeData() {
     this.database.ref('waitlist').orderByChild('id').once('value', (snapshot) => {
+      console.group("Wiping users from database");
+      console.info(snapshot.val())
       snapshop.forEach((clientSnapshot) => {
         clientSnapshot.ref().remove()
       })
     })
+    console.groupEnd()
   }
 
   /**
@@ -98,6 +105,12 @@ export default class Waitlist extends Component {
    */
   _removeUserFromQueue() {
     this.database.ref('waitlist').orderByChild("id").limitToFirst(1).once('value', (snapshot) => {
+
+      // logging removal
+      let userData = snapshot.val()
+      console.info('Removing %s, number %d from queue', userData.fullName, userData.id )
+
+      // removing user from database
       snapshot.ref.remove()
     })
   }
