@@ -29,19 +29,20 @@ const globals = StyleSheet.create({
         fontSize: 16,
       },
       android: {
-        fontFamily: 'Assistant Regular',
-        fontSize:18,
+        fontFamily: 'Assistant',
+        fontSize:18
       },
     }),
   },
   textLarge: {
     fontSize: 20,
-    fontFamily: 'Assistant Regular',
+    fontFamily: 'Assistant',
     textAlign: 'center',
     color: colors.main,
   },
   textBold: {
-    fontFamily: 'Assistant Bold',
+    fontFamily: 'Assistant',
+    fontWeight: 'bold'
   }
 })
 
