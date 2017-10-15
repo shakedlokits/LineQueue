@@ -17,7 +17,9 @@
 		"babel-jest": "20.0.3",
 		"babel-preset-react-native": "2.1.0",
 		"eslint": "^4.3.0",
+		"eslint-plugin-jest": "^21.2.0",
 		"eslint-plugin-react": "^7.1.0",
+		"eslint-plugin-react-native": "^3.1.0",
 		"jest": "20.0.4",
 		"react-test-renderer": "16.0.0-alpha.12"
 	},
@@ -25,6 +27,11 @@
 		"preset": "react-native",
 		"transformIgnorePatterns": [
 			"node_modules/(?!(jest-)?react-native|react-navigation)"
+		]
+	},
+	"rnpm": {
+		"assets": [
+			"./src/fonts"
 		]
 	}
 }
