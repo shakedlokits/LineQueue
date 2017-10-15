@@ -16,20 +16,20 @@ const signupStyle = StyleSheet.create({
     borderColor: colors.main,
     ...Platform.select({
       ios: {
-        flex: 1,
+        flex: 1
       },
       android: {
-        flex:0.8,
-        paddingBottom: width * (1 / 20),
-      },
-    }),
+        flex: 0.8,
+        paddingBottom: width * (1 / 20)
+      }
+    })
   },
   inputBox: {
     padding: width * (1 / 20),
     width: width * (5 / 7),
     borderColor: colors.main,
     borderWidth: 1,
-    textAlign: 'center',
+    textAlign: 'center'
   },
   buttonBox: {
     borderWidth: 2,
@@ -46,20 +46,26 @@ const signupStyle = StyleSheet.create({
         shadowColor: '#151515',
         shadowRadius: 0,
         shadowOpacity: 1.0,
-        backgroundColor: 'white',
+        backgroundColor: 'white'
       },
       android: {
-        backgroundColor: '#151515',
-      },
-    }),
-
+        backgroundColor: '#151515'
+      }
+    })
   },
   buttonText: {
     fontFamily: 'Alef',
     fontWeight: 'bold',
-    color: 'white',
     fontSize: 38,
-    textAlign: 'center'
+    textAlign: 'center',
+    ...Platform.select({
+      ios: {
+        color: colors.main,
+      },
+      android: {
+        color: 'white',
+      }
+    })
   }
 })
 
