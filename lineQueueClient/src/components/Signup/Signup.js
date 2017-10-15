@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Text, View, TextInput, TouchableHighlight} from 'react-native';
+import {Text, View, TextInput, TouchableHighlight, Keyboard, TouchableWithoutFeedback} from 'react-native';
 import Header from '../Header/Header'
 import * as firebase from 'firebase'
 import globals from '../../styles/globals.style'
@@ -46,26 +46,28 @@ export default class Signup extends Component {
 
   render() {
     return (
-      <View style={globals.sceneContainer}>
-        <Header/>
-        <View style={globals.contentContainer}>
-          <View style={signupStyle.inputContainer}>
-            <Text style={globals.textRegular}>
-              על מנת להזמין תור למחסן הציוד הזן את שמך: {"\n"}
-            </Text>
-            <TextInput style={[globals.textLarge, signupStyle.inputBox]}
-              underlineColorAndroid={'transparent'} placeholder={"שם מלא"}
-              onChangeText= { (input) => this.setState({fullName: input}) } value={this.state.fullName}/>
-          </View>
-          <View style={signupStyle.buttonContainer}>
-            <View style={signupStyle.buttonBox}>
-              <TouchableHighlight onPress={this.registerNewUser}>
-                <Text style={signupStyle.buttonText}>שלח</Text>
-              </TouchableHighlight>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={globals.sceneContainer}>
+          <Header/>
+          <View style={globals.contentContainer}>
+            <View style={signupStyle.inputContainer}>
+              <Text style={globals.textRegular}>
+                על מנת להזמין תור למחסן הציוד הזן את שמך: {"\n"}
+              </Text>
+              <TextInput style={[globals.textLarge, signupStyle.inputBox]}
+                underlineColorAndroid={'transparent'} placeholder={"שם מלא"}
+                onChangeText= { (input) => this.setState({fullName: input}) } value={this.state.fullName}/>
+            </View>
+            <View style={signupStyle.buttonContainer}>
+              <View style={signupStyle.buttonBox}>
+                <TouchableHighlight onPress={this.registerNewUser}>
+                  <Text style={signupStyle.buttonText}>שלח</Text>
+                </TouchableHighlight>
+              </View>
             </View>
           </View>
         </View>
-      </View>
+      </TouchableWithoutFeedback>
     )
   }
 }
