@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -260,12 +261,14 @@
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+
 		3B1E512B51B04D2E9605E44C /* Alef Bold.ttf */ = {isa = PBXFileReference; name = "Alef Bold.ttf"; path = "../src/fonts/Alef Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		EAF7F811567A4080A5E01668 /* Alef Regular.ttf */ = {isa = PBXFileReference; name = "Alef Regular.ttf"; path = "../src/fonts/Alef Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		57367CB1BDB54F088AE695B2 /* Assistant Bold.ttf */ = {isa = PBXFileReference; name = "Assistant Bold.ttf"; path = "../src/fonts/Assistant Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		F01AFDEE42CB4284B2948D3E /* Assistant ExtraBold.ttf */ = {isa = PBXFileReference; name = "Assistant ExtraBold.ttf"; path = "../src/fonts/Assistant ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		98278A83BDE64B7D8A3B3225 /* Assistant Regular.ttf */ = {isa = PBXFileReference; name = "Assistant Regular.ttf"; path = "../src/fonts/Assistant Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		3721BF9CE3064C68B5DCCEA0 /* Assistant SemiBold.ttf */ = {isa = PBXFileReference; name = "Assistant SemiBold.ttf"; path = "../src/fonts/Assistant SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -479,6 +482,7 @@
 				00E356EF1AD99517003FC87E /* lineQueueManagerTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				BA158ED29AC240848EFF6C9B /* Resources */,
+
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -495,6 +499,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+
 		BA158ED29AC240848EFF6C9B /* Resources */ = {
 			isa = "PBXGroup";
 			children = (
@@ -590,7 +595,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 610;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {

@@ -2,7 +2,6 @@ import React from 'react'
 import {Text, View, StyleSheet, Image, Platform} from 'react-native';
 import {colors} from '../../styles/globals.style'
 
-
 /**
  * Renders the app header
  */
