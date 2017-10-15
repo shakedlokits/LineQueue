@@ -1,8 +1,18 @@
 import React, {Component} from 'react'
-import {Text, View, Dimensions, AppState, Alert} from 'react-native'
+import {
+  Text,
+  View,
+  Dimensions,
+  AppState,
+  Alert,
+  TouchableHighlight
+} from 'react-native'
 import * as firebase from 'firebase'
 import PropTypes from 'prop-types'
 import moment from 'moment'
+import waitlistStyle from './Waitlist.style'
+import globals from '../../styles/globals.style'
+import Header from '../Header/Header'
 
 export default class Waitlist extends Component {
 
@@ -117,15 +127,54 @@ export default class Waitlist extends Component {
 
   render() {
     return (
-      <View>
-        {this.state.waitlist.map((client) => {
-          return (
-            <View key={client.id}>
-              <Text>{client.fullName} {client.timestamp}</Text>
+      <View style={globals.sceneContainer}>
+        <Header/>
+        <View style={waitlistStyle.listConatiner}>
+          {this.state.waitlist.map((client, index) => {
 
-            </View>
-          )
-        })}
+            let itemContainerStyle = [
+              waitlistStyle.itemContainer,
+            (index === 0) ? {
+              backgroundColor: '#151515',
+              marginBottom: 20
+            } : {
+              backgroundColor: 'white'
+            }
+            ]
+
+            let textColor = (index === 0) ? {
+              color: 'white'
+            } : {
+              color: '#151515'
+            }
+
+            return (
+              <View key={client.id} style={itemContainerStyle}>
+                <View style={waitlistStyle.idContainer}>
+                  <Text style={[textColor, waitlistStyle.idText]}>{client.id}</Text>
+                </View>
+                <View style={waitlistStyle.fullNameContainer}>
+                  <Text style={[waitlistStyle.fullNameText, textColor]}>{client.fullName}</Text>
+                </View>
+                <View style={waitlistStyle.timestampContainer}>
+                  <Text style={[waitlistStyle.timestampText, textColor]}>{client.timestamp}</Text>
+                </View>
+              </View>
+            )
+          })}
+        </View>
+        <View style={waitlistStyle.buttonContainer}>
+          <View style={waitlistStyle.buttonRedBox}>
+            <TouchableHighlight onPress={() => {}}>
+              <Text style={waitlistStyle.buttonText}>מחק רשימה</Text>
+            </TouchableHighlight>
+          </View>
+          <View style={waitlistStyle.buttonBox}>
+            <TouchableHighlight onPress={() => {}}>
+              <Text style={waitlistStyle.buttonText}>הבא</Text>
+            </TouchableHighlight>
+          </View>
+        </View>
       </View>
     )
   }
