@@ -55,7 +55,8 @@ const signupStyle = StyleSheet.create({
 
   },
   buttonText: {
-    fontFamily: 'Alef Bold',
+    fontFamily: 'Alef',
+    fontWeight: 'bold',
     color: 'white',
     fontSize: 38,
     textAlign: 'center'

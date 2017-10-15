@@ -36,12 +36,13 @@ const globals = StyleSheet.create({
   },
   textLarge: {
     fontSize: 20,
-    fontFamily: 'Assistant Regular',
+    fontFamily: 'Assistant',
     textAlign: 'center',
     color: colors.main,
   },
   textBold: {
-    fontFamily: 'Assistant Bold',
+    fontFamily: 'Assistant',
+    fontWeight: 'bold'
   }
 })
 

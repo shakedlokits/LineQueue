@@ -27,7 +27,8 @@ const Header = () => {
       fontSize: 40,
       textAlign: 'right',
       color: 'white',
-      fontFamily: 'Alef Bold',
+      fontFamily: 'Alef',
+      fontWeight: 'bold',
       ...Platform.select({
         ios: {
           lineHeight: 35,
