@@ -11,10 +11,11 @@ const waitlistStyle = StyleSheet.create({
 
   listConatiner: {
     flexDirection: 'column',
-    alignItems: 'flex-start',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
     backgroundColor: 'white',
     flex: 4,
-    padding: width * (1 / 10),
+    padding: width * (1 / 15),
     paddingBottom: 0,
   },
   buttonContainer: {
@@ -43,26 +44,33 @@ const waitlistStyle = StyleSheet.create({
     backgroundColor: '#D02B2B',
   },
   buttonText: {
-    fontFamily: 'Alef Bold',
+    fontFamily: 'Alef',
+    fontWeight: 'bold',
     color: 'white',
     fontSize: 38,
     textAlign: 'center'
   },
   idText: {
-    fontFamily: 'Alef Bold',
+    fontFamily: 'Alef',
+    fontWeight: 'bold',
     color: 'white',
-    fontSize: 36,
+    fontSize: 24,
     textAlign: 'center'
   },
+  textColorFirst: {
+    color: 'white'
+  },
   fullNameText: {
-    fontSize: 26,
-    fontFamily: 'Assistant Bold',
+    fontSize: 18,
+    fontFamily: 'Assistant',
+    fontWeight: 'bold',
     textAlign: 'right',
     color: colors.main,
   },
   timestampText: {
-    fontSize: 26,
-    fontFamily: 'Assistant Bold',
+    fontSize: 18,
+    fontFamily: 'Assistant',
+    fontWeight: 'bold',
     textAlign: 'center',
     color: colors.main,
   },
@@ -70,28 +78,37 @@ const waitlistStyle = StyleSheet.create({
     display:'flex',
     flexDirection:'row-reverse',
     width: width * 0.8,
-    height: width / 10,
+    height: width * (1 / 15),
+    backgroundColor: 'white',
+    marginBottom: 4
+  },
+  itemContainerFirst:{
+    backgroundColor: colors.main,
+    marginBottom: 20,
+    width: width * 0.9,
+    height: width * (1 / 10),
   },
   idContainer: {
-    borderWidth: 1,
+    borderWidth: 3,
     borderColor: colors.main,
     backgroundColor: colors.main,
-    flex: 1,
-    padding:10,
+    width: width * (1 / 15),
+    justifyContent: 'center'
   },
   fullNameContainer: {
-    borderWidth: 1,
+    borderWidth: 3,
     borderColor: colors.main,
     flex: 4,
-    padding:10,
-    paddingRight: 15,
+    justifyContent: 'center',
+    paddingRight: 20
   },
   timestampContainer: {
-    borderWidth: 1,
+    borderWidth: 3,
+    borderRightWidth: 0,
     borderColor: colors.main,
-    flex: 2,
-    padding:10,
-  }
+    width: width * 0.15,
+    justifyContent: 'center'
+  },
 })
 
 export default waitlistStyle

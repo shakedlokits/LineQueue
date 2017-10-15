@@ -38,25 +38,33 @@ export default class Waitlist extends Component {
   _getWaitlist() {
 
     // requests the waitlist from firebase
-    console.group('Fetching waitlist')
-    this.database.ref('waitlist').orderByChild('id').once('value', (snapshot) => {
+    this.database.ref('waitlist').orderByChild('id').limitToFirst(10).once('value', (snapshot) => {
 
       // define format for timestamp
       let timestampFormat = "DD/MM HH:MM"
 
       // on success, set the state to number of waiting ahead
       let waitlist = snapshot.val()
-      console.info(waitlist)
+      console.info('Fetching waitlist', waitlist)
 
-      this.setState({
-        waitlist: Object.keys(waitlist).map((key, index) => {
-          return Object.assign({} ,waitlist[key], {
-            timestamp: moment(waitlist[key].timestamp).format(timestampFormat)
-          })
+      if (!waitlist) {
+        this.setState({
+          waitlist: []
+        }, () => {
+          console.info('no waiting in list')
         })
-      }, () => {
-        console.info('set state to wailist')
-      })
+      } else {
+        this.setState({
+          waitlist: Object.keys(waitlist).map((key, index) => {
+            return Object.assign({} ,waitlist[key], {
+              timestamp: moment(waitlist[key].timestamp).format(timestampFormat)
+            })
+          })
+        }, () => {
+          console.info('set state to wailist')
+        })
+      }
+
     })
 
   }
@@ -78,9 +86,8 @@ export default class Waitlist extends Component {
    */
   _wipeData() {
     this.database.ref('waitlist').orderByChild('id').once('value', (snapshot) => {
-      console.group("Wiping users from database");
-      console.info(snapshot.val())
-      snapshop.forEach((clientSnapshot) => {
+      console.info("Wiping users from database", snapshot.val())
+      snapshot.forEach((clientSnapshot) => {
         clientSnapshot.ref().remove()
       })
     })
@@ -121,7 +128,9 @@ export default class Waitlist extends Component {
       console.info('Removing %s, number %d from queue', userData.fullName, userData.id )
 
       // removing user from database
-      snapshot.ref.remove()
+      snapshot.forEach((clientSnapshot) => {
+        clientSnapshot.ref.remove()
+      })
     })
   }
 
@@ -132,21 +141,12 @@ export default class Waitlist extends Component {
         <View style={waitlistStyle.listConatiner}>
           {this.state.waitlist.map((client, index) => {
 
+            // set first item parameters
+            let textColor = (index === 0) ? waitlistStyle.textColorFirst : {}
             let itemContainerStyle = [
               waitlistStyle.itemContainer,
-            (index === 0) ? {
-              backgroundColor: '#151515',
-              marginBottom: 20
-            } : {
-              backgroundColor: 'white'
-            }
+              (index === 0) ? waitlistStyle.itemContainerFirst : {}
             ]
-
-            let textColor = (index === 0) ? {
-              color: 'white'
-            } : {
-              color: '#151515'
-            }
 
             return (
               <View key={client.id} style={itemContainerStyle}>
@@ -165,12 +165,12 @@ export default class Waitlist extends Component {
         </View>
         <View style={waitlistStyle.buttonContainer}>
           <View style={waitlistStyle.buttonRedBox}>
-            <TouchableHighlight onPress={() => {}}>
+            <TouchableHighlight onPress={this.handleWipeData}>
               <Text style={waitlistStyle.buttonText}>מחק רשימה</Text>
             </TouchableHighlight>
           </View>
           <View style={waitlistStyle.buttonBox}>
-            <TouchableHighlight onPress={() => {}}>
+            <TouchableHighlight onPress={this.removeUserFromQueue}>
               <Text style={waitlistStyle.buttonText}>הבא</Text>
             </TouchableHighlight>
           </View>
