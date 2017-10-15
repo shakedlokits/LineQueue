@@ -1,8 +1,7 @@
 import React from 'react'
-import {Text, View, StyleSheet, Image, Dimensions, Platform} from 'react-native';
+import {Text, View, StyleSheet, Image, Platform} from 'react-native';
 import {colors} from '../../styles/globals.style'
 
-let height = Dimensions.get('window').height
 
 /**
  * Renders the app header
@@ -12,32 +11,28 @@ const Header = () => {
     headerContainer: {
       flex: 1,
       backgroundColor: colors.main,
-      maxHeight: 220,
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'flex-end',
-      paddingRight: 35
+      maxHeight: 210,
+      flexDirection: 'row-reverse',
+      justifyContent: 'flex-start',
+      alignItems: 'flex-start',
+      paddingRight: 100,
+      padding: 20,
     },
     logo: {
+      marginTop:15,
       width: 103,
       height: 50,
-      paddingRight: 35
+      marginRight:40,
+      marginLeft: 20,
     },
     title: {
-      fontSize: 40,
+      fontSize: 45,
       textAlign: 'right',
       color: 'white',
       fontFamily: 'Alef Bold',
-      ...Platform.select({
-        ios: {
-          lineHeight: 35,
-          paddingTop: height * (1 / 40),
-        },
-        android: {
-          lineHeight: 45,
-        },
-      }),
-    }
+      lineHeight: 47,
+      marginRight:10,
+    },
   })
 
   return (
