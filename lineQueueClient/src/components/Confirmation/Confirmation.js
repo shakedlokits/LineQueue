@@ -12,6 +12,8 @@ const Confirmation = (props) =>
       <View style={globals.contentContainer}>
         <View style={confirmationStyle.textContainer}>
           <Text style={[globals.textLarge, globals.textBold]}>
+            ניתן לגשת אל הדלפק,
+            {"\n"}
             תודה על שהשתמשת
             {"\n"}
             במערכת הזמנת התורים

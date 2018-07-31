@@ -73,6 +73,7 @@ export default class Waitlist extends Component {
 	 * on mount, set up running id listener and listen for app state
 	 */
   componentDidMount() {
+    console.info('Component did mount')
 
     // set a running id listener
     var getWaitlist = this.getWaitlist
@@ -88,10 +89,11 @@ export default class Waitlist extends Component {
     this.database.ref('waitlist').orderByChild('id').once('value', (snapshot) => {
       console.info("Wiping users from database", snapshot.val())
       snapshot.forEach((clientSnapshot) => {
-        clientSnapshot.ref().remove()
+        clientSnapshot.ref.remove()
       })
     })
-    console.groupEnd()
+    console.info('Resetting counter')
+    this.database.ref('runningId').set(0)
   }
 
   /**
@@ -125,7 +127,8 @@ export default class Waitlist extends Component {
 
       // logging removal
       let userData = snapshot.val()
-      console.info('Removing %s, number %d from queue', userData.fullName, userData.id )
+      if (userData) console.info('Removing %s, number %d from queue', userData.fullName, userData.id )
+
 
       // removing user from database
       snapshot.forEach((clientSnapshot) => {

@@ -15,6 +15,22 @@ react-native run-<android|ios>
 
 For this project to run you must have the `react-native` installed and configured, for more information see [ReactNative - Getting Started](https://facebook.github.io/react-native/docs/getting-started.html)
 
+### Configuration
+
+In order to build this project, place a `config.js` file in the root directory which resembles:
+```javascript
+const config = {
+    apiKey: <API Key>,
+    authDomain: <Authentication Domain>,
+    databaseURL: <Database URL>,
+    projectId: <Project ID>,
+    storageBucket: <Storage Bucket ID>,
+    messagingSenderId: <Message Sender ID>
+}
+export default config
+```
+which links this project to your **firebase** instance, before you build these applications. More details on further configuration can be found [Firebase Remote Config](https://firebase.google.com/docs/remote-config/use-config-rest).
+
 ## Running the tests
 
 In order to run the tests, simply run

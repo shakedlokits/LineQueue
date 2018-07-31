@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Text, View, Dimensions, AppState, Alert} from 'react-native'
+import {Text, View, Dimensions, AppState, Alert, Platform} from 'react-native'
 import * as firebase from 'firebase'
 import {Actions} from 'react-native-router-flux'
 import PropTypes from 'prop-types';
@@ -37,7 +37,7 @@ export default class Queue extends Component {
       // on success, set the state to number of waiting ahead
       let waitlist = snapshot.val()
       this.setState({
-        numWaiting: countPosition(waitlist, this.props.id)
+        numWaiting: (waitlist) ? countPosition(waitlist, this.props.id) : 0
       }, () => {
         // if the number of waiting ahead is zero, move to next screen
         if (!this.state.numWaiting) {
@@ -47,7 +47,7 @@ export default class Queue extends Component {
         if (this.state.numWaiting < 5) {
           PushNotification.localNotification({
             title: "הבא בתור!",
-            message: "ישנם " + this.state.numWaiting + " ממתינים לפניך, אנא גש/י לדלפק המחסן."
+            message: "ישנם " + this.state.numWaiting + " ממתינים לפניך, אנא גש/י לדלפק המחסן.",
           })
         }
       })
@@ -145,7 +145,11 @@ export default class Queue extends Component {
 					</View>
 					<View style={queueStyle.footerContainer}>
 						<Text style={[queueStyle.content, queueStyle.footerContent]}>
-              ניתן לסגור כעת את האפליקציה, הודעה תשלח{'\n'} אלייך כשיתקרב תורך.
+            {
+              (Platform.OS === 'android')
+              ? 'ניתן לסגור כעת את האפליקציה, הודעה תשלח\n אלייך כשיתקרב תורך.'
+              : 'נא לא לסגור את האפליקציה, מספרך\n בתור יעודכן במסך זה'
+            }
 						</Text>
 					</View>
 				</View>

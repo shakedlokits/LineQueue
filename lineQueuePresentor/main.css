@@ -24,9 +24,10 @@ html, body {
   text-align: right;
   color: #ffffff;
   font-family: Alef;
-  font-size: 5em;
+  font-size: 4.5em;
   font-weight: bold;
   clear: both;
+  /*text-shadow: 10px 10px #ff285b;*/
 }
 
 .numberSlot {
@@ -37,8 +38,9 @@ html, body {
   font-family: Alef;
   font-size: 2.2em;
   font-weight: bold;
-  margin: 5px;
-  padding: 0.3em;
+  margin: 4px;
+  padding: 0.5em;
+  padding-top: 0.2em;
 }
 
 .numberSlotBig {
@@ -71,8 +73,9 @@ html, body {
 .headerContainer {
   flex: 1;
   background-color: #151515;
-  padding: 40px;
+  padding: 60px;
   padding-top: 60px;
+  z-index:-2;
 }
 
 .contentContainer {
@@ -103,4 +106,16 @@ html, body {
 .headerTextBlock {
   display: inline-block;
   margin-top: 30px;
+}
+
+.headerTextBlock:nth-child(2) {
+  display: block;
+}
+
+canvas {
+  display: block;
+  position:absolute;
+  top:0;
+  right: 0;
+  z-index:-1;
 }
