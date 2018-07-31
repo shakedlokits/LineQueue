@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions, Platform} from 'react-native';
+import { colors } from '../../styles/globals.style'
 
 let width = Dimensions.get('window').width
 
@@ -27,7 +28,8 @@ const queueStyle = StyleSheet.create({
 		textAlign: 'center',
 		fontFamily: 'Assistant',
 		fontWeight: 'normal',
-		fontSize: 20
+		fontSize: 20,
+    color: colors.main
 	},
 	boldContent: {
 		fontWeight: 'bold'
@@ -38,7 +40,7 @@ const queueStyle = StyleSheet.create({
 		fontSize: 40,
 		color: 'white',
 		fontWeight: '800',
-		backgroundColor: '#151515',
+		backgroundColor: colors.main,
 		width: width / 6,
 		height: width / 6
 	},
